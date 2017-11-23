@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>汽车秀</title>
+    <script src="../js/mui.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+    <style>
+    	.mui-content.bgrf{
+    		background: #fff;
+    		padding: 54px 10px;
+    		position:relative
+    	}
+    	.bgrf h3{
+    		margin:.625em 0 1.2em 0;
+    	}
+    	.bgrf span{
+    		color:#aaa;
+    	}
+    	.new-car-top{
+    		position:relative;
+    	}
+    	.com{
+    		position: absolute;
+    		right: 0;
+    		bottom: 0;
+    	}
+    	.new-car-content span{
+    		display: block;
+    		color:#000;
+    		margin:.625em 0;
+    	}
+    	.new-car-img {
+    		width:100%;
+    	}
+    	.new-car-img img{
+    		width:100%;
+    	}
+    </style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">汽车秀</h1>
+	    <a class="mui-icon mui-icon-home mui-pull-right" id="backIndex"></a>
+	</header>
+	<div class="mui-content bgrf">
+		<div class="new-car-top">
+			<h3>首付</h3>
+			<span>2017-02-20</span>
+			<span class="com">来源</span>
+		</div>		
+		<div class="new-car-content">
+			<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto adipisci suscipit voluptatum voluptate magnam veritatis eos molestiae voluptas nobis magni a inventore qui impedit laborum laboriosam facilis accusamus? Perspiciatis blanditiis.</span>
+			<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque excepturi sunt voluptatibus soluta iste earum dicta hic unde aliquid nisi explicabo amet? Libero distinctio ipsum officiis culpa eveniet accusamus eaque!</span>
+		</div>
+		<div class="new-car-img">
+			<img src="../images/news-page.jpg" alt="" />
+		</div>
+	</div>
+	<script>
+		mui.plusReady(function(){
+			var btn = document.getElementById("backIndex");
+			//监听点击事件
+			btn.addEventListener("tap",function () { 
+				plus.webview.currentWebview().close();
+				plus.webview.getLaunchWebview().evalJS("changSub(1);");
+				plus.webview.getLaunchWebview().evalJS("document.getElementById('tabBar').getElementsByClassName('mui-active')[0].classList.remove('mui-active');document.getElementById('home').classList.add('mui-active');mui.plusReady(function(){changSub(1)});");
+				plus.webview.getLaunchWebview().show();
+				});})
+	</script>
+</body>
+</html>

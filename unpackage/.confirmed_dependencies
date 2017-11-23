@@ -1,0 +1,97 @@
+{
+	"index.html": {
+		"refer": [
+			"html/service_rescue.html",
+			"html/service_appoin1.html",
+			"html/new-list.html",
+			"html/car-page.html",
+			"html/service_insurance.html",
+			"html/anti-fake.html",
+			"html/service-dealers.html",
+			"html/service_violation.html",
+			"formu.html",
+			"home.html",
+			"searcCar.html",
+			"searchCar.html",
+			"service.html",
+			"user.html"
+		],
+		"resources": [
+			"home.html",
+			"js/h.js",
+			"js/mui.min.js",
+			"service.html",
+			"searchCar.html"
+		]
+	},
+	"home.html": {
+		"refer": [
+			"html/new-list.html"
+		],
+		"resources": []
+	},
+	"searchCar.html": {
+		"refer": [
+			"html/car-page.html"
+		]
+	},
+	"html/service_appoin1.html": {
+		"refer": [
+			"index.html"
+		]
+	},
+	"html/service_rescue.html": {
+		"refer": [
+			"index.html"
+		]
+	},
+	"html/car-page.html": {
+		"refer": [
+			"index.html"
+		]
+	},
+	"service.html": {
+		"refer": [
+			"html/service_violation.html",
+			"html/service-dealers.html",
+			"html/service_rescue.html",
+			"html/service_appoin1.html",
+			"html/service_traffic.html",
+			"html/anti-fake.html",
+			"html/service_insurance.html"
+		]
+	},
+	"html/service-dealers.html": {
+		"refer": [
+			"index.html"
+		]
+	},
+	"formu.html": {
+		"refer": [
+			"main.html",
+			"formu_main.html"
+		],
+		"resources": [
+			"main.html",
+			"formu_main.html"
+		]
+	},
+	"user.html": {
+		"refer": [
+			"html/gear.html",
+			"html/login.html",
+			"html/reg.html",
+			"html/feedback.html"
+		]
+	},
+	"html/login.html": {
+		"refer": [
+			"html/reg.html"
+		]
+	},
+	"html/reg.html": {
+		"refer": [
+			"html/login.html"
+		]
+	}
+}

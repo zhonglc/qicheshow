@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>汽车秀</title>
+    <script src="../js/mui.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+    <style>
+    	.title{
+    		margin:.625em;
+    	}
+    	.carList .mui-table-view .mui-table-view-cell.mui-media .mui-media-object.mui-pull-left{
+    		max-width:170px;
+    		height:96px;
+    	}
+    	.carList .mui-table-view .mui-media-body{
+    		height:96px;
+    		padding-top:30px;
+    	}
+    	.carList .mui-table-view .mui-media-body p{
+    		color: #e4393c;;
+    	}
+    </style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">汽车秀</h1>
+	    <a class="mui-icon mui-icon-home mui-pull-right" id="backIndex"></a>
+	</header>
+	<div class="mui-content">
+		<div class="title">
+			<h3>一汽大众-奥迪</h2>
+		</div>
+		<div class="carList">
+			<ul class="mui-table-view">
+			    <li class="mui-table-view-cell mui-media">
+			        <a href="javascript:;">
+			            <img class="mui-media-object mui-pull-left " src="../images/corolla.png">
+			            <div class="mui-media-body">
+			                <span>奥迪</span>
+			                <p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+			            </div>
+			        </a>
+			    </li>
+			    <li class="mui-table-view-cell mui-media">
+			        <a href="javascript:;">
+			            <img class="mui-media-object mui-pull-left" src="../images/corolla.png">
+			            <div class="mui-media-body">
+			                奥迪
+			                <p class="mui-ellipsis">想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</p>
+			            </div>
+			        </a>
+			    </li>
+			    <li class="mui-table-view-cell mui-media">
+			        <a href="javascript:;">
+			            <img class="mui-media-object mui-pull-left" src="../images/corolla.png">
+			            <div class="mui-media-body">
+			                奥迪
+			                <p class="mui-ellipsis">烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
+			            </div>
+			        </a>
+			    </li>
+			</ul>
+		</div>
+	</div>
+	<script>
+		mui.plusReady(function(){
+			var btn = document.getElementById("backIndex");
+			//监听点击事件
+			btn.addEventListener("tap",function () { 
+				plus.webview.currentWebview().close();
+				plus.webview.getLaunchWebview().evalJS("changSub(1);");
+				plus.webview.getLaunchWebview().evalJS("document.getElementById('tabBar').getElementsByClassName('mui-active')[0].classList.remove('mui-active');document.getElementById('home').classList.add('mui-active');mui.plusReady(function(){changSub(1)});");
+				plus.webview.getLaunchWebview().show();
+				});})
+	</script>
+</body>
+</html>

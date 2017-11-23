@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link rel="stylesheet" href="css/icons-extra.css" />
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/index.css" />
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <h1 class="mui-title">汽车秀</h1>
+	    <a href="index.html" class="mui-icon mui-icon-reload mui-pull-right"></a>
+</header>
+<nav class="mui-bar mui-bar-tab">
+		<a href="#home" class="mui-tab-item mui-active">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">首页</span> 
+		</a>
+		<a href="#forum" class="mui-tab-item">
+			<span class="mui-icon mui-icon-compose"></span>
+			<span class="mui-tab-label">论坛</span>
+		</a>
+		<a href="#searchCar" class="mui-tab-item">
+			<span class="mui-icon mui-icon-search"></span>
+			<span class="mui-tab-label">找车</span>
+		</a>
+		<a href="#service" class="mui-tab-item">
+			<span class="mui-icon mui-icon-bars"></span>
+			<span class="mui-tab-label">服务</span>
+		</a>
+		<a href="#user" class="mui-tab-item">
+			<span class="mui-icon mui-icon-person-filled"></span>
+			<span class="mui-tab-label">我的</span>
+		</a>
+	</nav>
+	<div class="mui-content">
+			<div id="home" class="mui-control-content mui-active">
+				<div class="banner">
+					<img src="img/banner-car.jpg" alt="" />
+					<h1>雪佛兰2017</h1>
+				</div>
+				<div class="table-view">
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 violation">
+							<a href="#">
+								<img class="mui-media-icon aximg" src="images/icon-png/icon-ax-1.png" alt="" />
+							</a>	
+								<div class="mui-media-body">违章查询</div>
+								<span class="mui-media-large">6次</span>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4">
+							<a href="#">
+								<img class="mui-media-icon aximg" src="images/icon-png/icon-ax-2.png" alt="" />
+							</a>	
+								<div class="mui-media-body">违章查询</div>
+								<span class="mui-media-large">6次</span>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4">
+							<a href="#">
+								<img class="mui-media-large aximg" src="images/icon-png/icon-ax-3.png" alt="" />
+							</a>	
+								<div class="mui-media-body">违章查询</div>
+								<span class="mui-media-large">6次</span>
+						</li>
+					</ul>
+				</div>
+				<div class="HOT">
+					<div>
+						<div class="mui-table-view">
+							<div class="mui-table-view-cell mui-media" id="new-list">
+								<a href="#">
+									<img src="images/icon-hot.jpg" alt="" class="mui-media-icon mui-pull-left hot-img"/>
+									<div class="mui-media-body">
+										<h4>首付</h6>
+										<p>雪佛兰</p>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class=" mui-row">
+							<ul  class="mui-table-view mui-col-xs-6">
+								<li class="mui-table-view-cell mui-media">
+									<a href="#">
+										<img src="images/icon-png/icon-ax-4.png" alt="" class="mui-media-icon mui-pull-right hot2img"/>
+										<div class="mui-media-body">
+											<p class="mui-badge mui-badge-danger">车主抵押贷款</p>
+											<p>给钱开车</p>
+										</div>
+									</a>
+								</li>
+								</ul>
+								<ul   class="mui-table-view mui-col-xs-6">
+								<li class="mui-table-view-cell mui-media">
+									<a href="#">
+										 <img src="images/icon-png/icon-ax-5.png" alt="" class="mui-media-icon mui-pull-right hot2img"/>
+										<div class="mui-media-body">
+											<p class="mui-badge mui-badge-danger">车主抵押贷款</p>
+											<p>给钱开车</p>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>	
+			<div id="forum" class=" mui-control-content">
+				<div class="search">
+					<div class="mui-input-row mui-search">
+		    			<input type="search" class="mui-input-clear" placeholder="关键字">
+					</div>
+				</div>	
+				<div class="fff">
+					<div class="mui-row">
+						<div class="mui-col-xs-4 aui">
+							<div class="cell1 cell">
+								最新帖子
+							</div>
+						</div>
+						<div class="mui-col-xs-4 aui">
+							<div class="cell2 cell">最新帖子 </div>
+						</div>
+						<div class="mui-col-xs-4 aui">
+							<div class="cell3 cell">最新帖子 </div>
+						</div>
+					</div>
+					<div class="hots">
+							<h5>搜索热词</h4>
+							<p class="hot-list"><a href="#">宝马</a><a href="#">宝马</a><a href="#">宝马</a><a href="#">宝马</a><a href="#">宝马</a><a href="#">宝马</a></p>
+					</div>
+				</div>
+				<div class="product-list">
+					<ul class="mui-table-view">
+					    <li class="mui-table-view-cell mui-media">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left che-xiu" src="img/che-xiu-1.jpg">
+					            <div class="mui-media-body">
+					                宝马
+					                <p class="mui-ellipsis product-discuss-p">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+					            </div>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left che-xiu" src="img/che-xiu-2.jpg">
+					            <div class="mui-media-body">
+					                木屋
+					                <p class="mui-ellipsis product-discuss-p">想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</p>
+					            </div>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left che-xiu" src="img/che-xiu-3.jpg">
+					            <div class="mui-media-body">
+					                CBD
+					                <p class="mui-ellipsis product-discuss-p">烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
+					            </div>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left che-xiu" src="img/che-xiu-4.jpg">
+					            <div class="mui-media-body">
+					                CBD
+					                <p class="mui-ellipsis product-discuss-p">烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
+					            </div>
+					        </a>
+					    </li>
+					</ul>
+				</div>
+			</div>
+			<div id="searchCar" class=" mui-control-content">
+				<div class="search">
+					<div class="mui-input-row mui-search">
+		    			<input type="search" class="mui-input-clear" placeholder="本田思域">
+					</div>
+				</div>
+				<div class="fff">
+					<div class="mui-row">
+						<div class="mui-col-xs-4 aui">
+							<div class="cell1 cell">
+								最新帖子
+							</div>
+						</div>
+						<div class="mui-col-xs-4 aui">
+							<div class="cell2 cell">最新帖子 </div>
+						</div>
+						<div class="mui-col-xs-4 aui">
+							<div class="cell3 cell">最新帖子 </div>
+						</div>
+					</div>
+					<div class="hots">
+							<h5>搜索热词</h4>
+							<p class="hot-list"><a href="#">宝马</a><a href="#">宝马</a><a href="#">宝马</a><a href="#">宝马</a><a href="#">宝马</a><a href="#">宝马</a></p>
+					</div>
+				</div>
+				<div>
+					<div class="cae-list">
+						<h3>A</h3>
+					</div>
+					<ul class="mui-table-view search-car">
+					    <li class="mui-table-view-cell mui-media">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left car-list-img" src="img/a1.jpg">
+					            <span class="mui-media-body">
+					                	奥迪
+					            </span>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left car-list-img" src="img/a2.jpg">
+					            <span class="mui-media-body">
+					                	阿斯顿马丁
+					            </span>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left car-list-img" src="img/a3.jpg">
+					            <span class="mui-media-body">
+					                	阿尔法
+					            </span>
+					        </a>
+					    </li>   
+					</ul>
+					<div class="cae-list">
+						<h3>B</h3>
+					</div>
+					<ul class="mui-table-view">
+					    <li class="mui-table-view-cell mui-media">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left car-list-img" src="img/a1.jpg">
+					            <span class="mui-media-body">
+					                	奥迪
+					            </span>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left car-list-img" src="img/a2.jpg">
+					            <span class="mui-media-body">
+					                	阿斯顿马丁
+					            </span>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left car-list-img" src="img/a3.jpg">
+					            <span class="mui-media-body">
+					                	阿尔法
+					            </span>
+					        </a>
+					    </li>   
+					</ul>
+					<div class="cae-list">
+						<h3>A</h3>
+					</div>
+					<ul class="mui-table-view">
+					    <li class="mui-table-view-cell mui-media">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left car-list-img" src="img/a1.jpg">
+					            <span class="mui-media-body">
+					                	奥迪
+					            </span>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left car-list-img" src="img/a2.jpg">
+					            <span class="mui-media-body">
+					                	阿斯顿马丁
+					            </span>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media">
+					        <a href="javascript:;">
+					            <img class="mui-media-object mui-pull-left car-list-img" src="img/a3.jpg">
+					            <span class="mui-media-body">
+					                	阿尔法
+					            </span>
+					        </a>
+					    </li>   
+					</ul>
+				</div>
+			</div>
+			
+<div id="service" class=" mui-control-content">
+				<div class="fuwu">
+					<div class="fuwu-title">
+						<span>全部服务</span>
+					</div>
+					<ul class="mui-table-view mui-grid-view mui-grid-9">
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 appoin">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-y-12.png" alt="" /></span>
+						        <div class="mui-media-body">预约保养</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4" id="rescue">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-y-11.png" alt="" /></span>
+						        <div class="mui-media-body">紧急救援</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 violation">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-y-10.png" alt="" /></span>
+						        <div class="mui-media-body">违章查询</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4" id="featured">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-y-9.png" alt="" /></span>
+						        <div class="mui-media-body">推荐购车</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 appoin">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-y-8.png" alt="" /></span>
+						        <div class="mui-media-body">预约维修</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4" id="dealers">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-y-7.png" alt="" /></span>
+						        <div class="mui-media-body">经销商查询</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4" id="anti_fake">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-s-17.png" alt="" /></span>
+						        <div class="mui-media-body">配件防伪</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4" id="insurance">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-y-5.png" alt="" /></span>
+						        <div class="mui-media-body">保险服务</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4" id="traffic">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-y-4.png" alt="" /></span>
+						        <div class="mui-media-body">现行查询</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-y-3.png" alt="" /></span>
+						        <div class="mui-media-body">金融服务</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-y-2.png" alt="" /></span>
+						        <div class="mui-media-body">附近加油站</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-y-1.png" alt="" /></span>
+						        <div class="mui-media-body">购物计算</div>
+						    </a>
+						</li>
+					
+					</ul>
+					
+				</div>	
+			</div>
+			<div id="user" class="mui-control-content">
+				<div class="user-window">
+					<div class="operation">
+						<a href="#" class="settings mui-icon mui-icon-gear-filled"></a>
+						<a href="#" class="feedback mui-icon mui-icon-chatbubble"></a>
+					</div>
+					<ul class="mui-table-view mui-grid-view">
+					    <li class="mui-table-view-cell mui-media mui-col-xs-12">
+					        <a href="#">
+					            <img class="mui-media-object user-top" src="img/my-photo1.jpg">
+					            <p class="mui-media-large">文字</p>
+					            <p class="mui-media-large">文字</p>
+					        </a>
+					    </li>
+					</ul>
+				</div>
+				<ul class="mui-table-view mui-grid-view myMine">
+				    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+				        <a href="#">
+				            <img class="mui-media-object mine" src="images/icon-png/icon-ax-6.png">
+				            <div class="mui-media-body">
+				            	<span class="mine-font">我的消息</span>
+				            </div>
+				        </a>
+				    </li>
+				    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+				        <a href="#">
+				            <img class="mui-media-object mine" src="images/icon-png/icon-ax-7.png">
+				            <div class="mui-media-body">
+				            	<span class="mine-font">我的消息</span>
+				            </div>
+				        </a>
+				    </li>
+				    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+				        <a href="#">
+				            <img class="mui-media-object mine" src="images/icon-png/icon-ax-8.png">
+				            <div class="mui-media-body">
+				            	<span class="mine-font">我的消息</span>
+				            </div>
+				        </a>
+				    </li>
+				</ul>
+				<ul class="mui-table-view imgP">
+				        <li class="mui-table-view-cell">
+				            <a class="mui-navigate-right ">
+				                <img src="images/icon-png/icon-n-1.png" alt="" class="mui-media-object mui-pull-left small-icon"/>
+				                <p>我的钱包</p>
+				            </a>
+				        </li>
+				        <li class="mui-table-view-cell">
+				            <a class="mui-navigate-right">
+				            	<img src="images/icon-png/icon-n-2.png" alt="" class="mui-media-object mui-pull-left small-icon"/>
+				                 <p>申请认证</p>
+				            </a>
+				        </li>
+				        <li class="mui-table-view-cell">
+				            <a class="mui-navigate-right">
+				            	<img src="images/icon-png/icon-n-3.png" alt="" class="mui-media-object mui-pull-left small-icon"/>
+				                 <p>我的订单</p>
+				            </a>
+				        </li>
+				        <li class="mui-table-view-cell">
+				            <a class="mui-navigate-right">
+				            	<img src="images/icon-png/icon-n-4.png" alt="" class="mui-media-object mui-pull-left small-icon"/>
+				                 <p>每日任务</p>
+				            </a>
+				        </li>
+				        <li class="mui-table-view-cell">
+				            <a class="mui-navigate-right">
+				            	<img src="images/icon-png/icon-n-5.png" alt="" class="mui-media-object mui-pull-left small-icon"/>
+				                 <p>意见反馈</p>
+				            </a>
+				        </li>
+				        <li class="mui-table-view-cell">
+				            <a class="mui-navigate-right">
+				            	<img src="images/icon-png/icon-n-6.png" alt="" class="mui-media-object mui-pull-left small-icon"/>
+				                 <p>点击好评</p>
+				            </a>
+				        </li>
+				   </ul>
+				</div>
+			
+	</div>
+	
+	<script>		
+		function onUrl(Pclass,sNode,url,id){
+			mui(Pclass).on('tap',sNode,function(){
+			//打开新闻详情 
+		mui.openWindow({
+			url:url,
+			id:id 
+		});
+	});
+		}
+		onUrl(".mui-table-view",'#new-list','html/new-list.html','new-list');
+		onUrl(".search-car",'.mui-table-view-cell','html/car-page.html','car-page');
+		onUrl(".mui-table-view",".appoin","html/service_appoin1.html","service_appoin1");
+		onUrl(".mui-table-view","#rescue","html/service_rescue.html","service_rescue");
+		onUrl(".mui-table-view",".violation","html/service_violation.html","service_violation");
+		onUrl(".mui-table-view","#featured","html/my_featured.html","my_featured");
+		onUrl(".mui-table-view","#dealers","html/service-dealers.html","service-dealers");
+		onUrl(".mui-table-view","#anti_fake","html/anti-fake.html","anti_fake");
+		onUrl(".mui-table-view","#insurance","html/service_insurance.html","service_insurance");
+		onUrl(".mui-table-view","#traffic","html/service_traffic.html","service_traffic");
+//		var item2Show=false,item3Show=false,item3Show;
+//		var slideAdd={
+//			
+//		aHref:function(index){
+//			var nav=document.getElementsByClassName('mui-bar')[1];
+//			nav.getElementsByClassName("mui-active")[0].classList.remove("mui-active");
+//			nav.children[index].classList.add("mui-active");
+//		},
+//		init:function() {
+//		document.querySelector(".mui-slider").addEventListener("slide",
+//		function(event){
+//			if(event.detail.slideNumber===1){
+//				this.aHref("1");
+//			}else if(event.detail.slideNumber===2){
+//				this.aHref("2");
+//			}
+//			else if(event.detail.slideNumber===3){
+//				this.aHref("3");
+//			}
+//			else if(event.detail.slideNumber===4){
+//				this.aHref("4");
+//			}
+//			else{
+//				this.aHref("0");
+//			}
+//		}.bind(this));
+//		}
+//		}
+//		slideAdd.init();
+	</script>
+</body>
+</html>

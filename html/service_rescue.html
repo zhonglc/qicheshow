@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>汽车秀</title>
+    <script src="../js/mui.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+    <style>
+    	#map{
+    		width:100%;
+    		height:300px;
+    		background: #fff;
+    	}
+    	.rescue-list .mui-table-view .mui-table-view-cell .mui-media-object.mui-pull-left{
+    		max-width:50px;
+    		height:50px;
+    	}
+    	.rescue-list .mui-table-view .mui-table-view-cell p{
+    		margin-top:.5em;
+    	}
+    	.rescue-list  hr{
+    		min-height:.625em;
+    		background-color:#ddd;
+    		border:0;
+    	}
+    	.zhinan h2{
+    		text-align: center;
+    	}
+    	.zhinan{
+    		background: #fff;
+    	}
+    </style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">汽车秀</h1>
+		    <a class="mui-icon mui-icon-home mui-pull-right" id="backIndex"></a>
+		</header>
+		<div class="mui-content">
+			<div id="map">
+				<h1>地图块</h1>
+			</div>
+			<div class="rescue-list">
+				<ul class="mui-table-view">
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;">
+				            <img class="mui-media-object mui-pull-left" src="../images/icon-png/icon-xiu-iphone1.png">
+				            <div class="mui-media-body">
+				                幸福
+				                <p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+				            </div>
+				        </a>
+				    </li>
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;">
+				            <img class="mui-media-object mui-pull-left" src="../images/icon-png/icon-xiu-iphone2.png">
+				            <div class="mui-media-body">
+				                木屋
+				                <p class="mui-ellipsis">400-111-111</p>
+				            </div>
+				        </a>
+				    </li>
+				    <hr />
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;">
+				            <div class="mui-media-body">
+				                木屋	
+				                <p class="mui-ellipsis">4s点地址</p>
+				                <p class="mui-ellipsis">400-111-111</p>
+				            </div>
+				        </a>
+				    </li>
+				</ul>
+			</div>
+			<div class="zhinan">
+				<h2>救援指南</h2>
+				<p>&nbsp;&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias harum beatae modi illo laboriosam itaque voluptates minima ad quidem repellat excepturi esse adipisci quo ea deleniti eveniet aspernatur vel enim?</p>
+			</div>
+		</div>
+			<script>
+		mui.plusReady(function(){
+			var btn = document.getElementById("backIndex");
+			//监听点击事件
+			btn.addEventListener("tap",function () { 
+				plus.webview.currentWebview().close();
+				plus.webview.getLaunchWebview().evalJS("changSub(1);");
+				plus.webview.getLaunchWebview().evalJS("document.getElementById('tabBar').getElementsByClassName('mui-active')[0].classList.remove('mui-active');document.getElementById('home').classList.add('mui-active');mui.plusReady(function(){changSub(1)});");
+				plus.webview.getLaunchWebview().show();
+				});})
+	</script>
+	</body>
+</html>

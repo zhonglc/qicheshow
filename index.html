@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>汽车秀</title>
+    <script src="js/mui.min.js"></script>
+    <link rel="stylesheet" href="css/icons-extra.css" />
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/index.css" />
+    <script type="text/javascript" src="js/zepto.js"></script> 
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <h1 class="mui-title">汽车秀</h1>
+	    <a class="mui-icon mui-icon-home mui-pull-right" id="shuaxin"></a>
+</header>
+<nav class="mui-bar mui-bar-tab" id="tabBar">
+		<a href="#home" class="mui-tab-item mui-active" id="home">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">首页</span> 
+		</a>
+		<a href="#forum" class="mui-tab-item" id="formu">
+			<span class="mui-icon mui-icon-compose"></span>
+			<span class="mui-tab-label">论坛</span>
+		</a>
+		<a href="#searchCar" class="mui-tab-item" id="searchCar">
+			<span class="mui-icon mui-icon-search"></span>
+			<span class="mui-tab-label">找车</span>
+		</a>
+		<a href="#service" class="mui-tab-item" id="service">
+			<span class="mui-icon mui-icon-bars"></span>
+			<span class="mui-tab-label">服务</span>
+		</a>
+		<a href="#user" class="mui-tab-item" id="user">
+			<span class="mui-icon mui-icon-person-filled"></span>
+			<span class="mui-tab-label">我的</span>
+		</a>
+</nav>
+	<script>
+		
+//		function a(){
+//		document.getElementById("tabBar").getElementsByClassName("mui-active")[0].classList.remove('mui-active');
+//	document.getElementById("home").classList.add("mui-active");
+//	console.log("1");
+//		}
+//		a();
+
+		mui.init({
+    subpages : [
+        {
+            url : 'home.html',
+            id  : 'home.html',
+            styles : {
+                top    : '44px',
+                bottom : '44px',
+                width  : "100%"
+            } 
+        },
+        {
+            url : 'formu.html',
+            id  : 'formu.html',
+            styles : {
+                left   : '100%',
+                top    : '44px',
+                bottom : '44px',
+                width  : "100%"
+            }
+        },
+        {
+            url : 'searchCar.html',
+            id  : 'searchCar.html',
+            styles : {
+                left   : '200%',
+                top    : '44px', 
+                bottom : '44px',
+                width  : "100%"
+            }
+        },
+        {
+        	url : 'service.html',
+            id  : 'service.html', 
+            styles : {
+                left   : '300%',
+                top    : '44px', 
+                bottom : '44px',
+                width  : "100%"
+            }
+        },
+        {
+        	url : 'user.html',
+            id  : 'user.html',
+            styles : {
+                left   : '400%',
+                top    : '44px', 
+                bottom : '44px',
+                width  : "100%"
+            }
+        }
+    ]
+});
+function changSub(index){
+    var sub1 =plus.webview.getWebviewById('home.html');
+    var sub2 =plus.webview.getWebviewById('formu.html');
+    var sub3 =plus.webview.getWebviewById('searchCar.html');
+    var sub4 =plus.webview.getWebviewById('service.html');
+    var sub5 =plus.webview.getWebviewById('user.html');
+    sub1.setStyle({left: (index - 1) * 100 + "%"});
+    sub2.setStyle({left: (2 - index) * 100 + "%"});
+    sub2.evalJS("main()");
+    sub3.setStyle({left: (3 - index) * 100 + "%"});
+    sub4.setStyle({left: (4 - index) * 100 + "%"});
+    sub5.setStyle({left: (5 - index) * 100 + "%"});
+	}
+mui.plusReady(function(){
+	mui(".mui-bar").on("tap","#home",function(){changSub(1);});
+	mui(".mui-bar").on("tap","#formu",function(){changSub(2);});
+	mui(".mui-bar").on("tap","#searchCar",function(){changSub(3);});
+	mui(".mui-bar").on("tap","#service",function(){changSub(4);});
+	mui(".mui-bar").on("tap","#user",function(){changSub(5);});
+	document.getElementById("shuaxin").addEventListener("tap",function(){
+		changSub(1);
+		document.getElementById('tabBar').getElementsByClassName('mui-active')[0].classList.remove('mui-active');
+		document.getElementById('home').classList.add('mui-active');
+	})
+	
+});
+//function onUrl(Pclass,sNode,url,id){
+//			mui(Pclass).on('tap',sNode,function(){
+//			//打开
+//		mui.openWindow({
+//			url:url,
+//			id:id 
+//		});
+//	});
+//		}
+//		onUrl(".mui-table-view",'#new-list','html/new-list.html','new-list');
+//		onUrl(".search-car",'.mui-table-view-cell','html/car-page.html','car-page');
+//		onUrl(".mui-table-view",".appoin","html/service_appoin1.html","service_appoin1");
+//		onUrl(".mui-table-view","#rescue","html/service_rescue.html","service_rescue");
+//		onUrl(".mui-table-view",".violation","html/service_violation.html","service_violation");
+//		onUrl(".mui-table-view","#featured","html/my_featured.html","my_featured");
+//		onUrl(".mui-table-view","#dealers","html/service-dealers.html","service-dealers");
+//		onUrl(".mui-table-view","#anti_fake","html/anti-fake.html","anti_fake");
+//		onUrl(".mui-table-view","#insurance","html/service_insurance.html","service_insurance");
+//		onUrl(".mui-table-view","#traffic","html/service_traffic.html","service_traffic");
+//		var item2Show=false,item3Show=false,item3Show; 
+//		var slideAdd={
+//			
+//		aHref:function(index){
+//			var nav=document.getElementsByClassName('mui-bar')[1];
+//			nav.getElementsByClassName("mui-active")[0].classList.remove("mui-active");
+//			nav.children[index].classList.add("mui-active");
+//		},
+//		init:function() {
+//		document.querySelector(".mui-slider").addEventListener("slide",
+//		function(event){
+//			if(event.detail.slideNumber===1){
+//				this.aHref("1");
+//			}else if(event.detail.slideNumber===2){
+//				this.aHref("2");
+//			}
+//			else if(event.detail.slideNumber===3){
+//				this.aHref("3");
+//			}
+//			else if(event.detail.slideNumber===4){
+//				this.aHref("4");
+//			}
+//			else{
+//				this.aHref("0");
+//			}
+//		}.bind(this));
+//		}
+//		}
+//		slideAdd.init();
+	</script>
+</body>
+</html>

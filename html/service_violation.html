@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>汽车秀</title>
+    <script src="../js/mui.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+	 <style type="text/css">
+	 	label.diqu{
+	 		width:auto;
+	 	}
+	 	label.diqu+.mui-icon{
+	 		font-size: 17px;
+	 		padding-top:11px;
+	 		padding-bottom:11px;
+	 		padding-left: 17px;
+	 		padding-right:17px;
+	 		background: #eee;
+	 	}
+	 	.submit{
+    		margin:2.5em .625em;
+    	}
+    	.info{
+    		background: #fff;
+    		padding-top:0.1px;
+    	}
+    	.info h4{
+    		margin:15px;
+    		padding-left: 8px;
+    		border-left: 3px solid #E4393C;
+    	}
+    	.info-centent{
+    		padding-left: 15px;
+    	}
+    	.info-centent p{
+    		display: inline-block;
+    	}
+    	form.mui-input-group{
+    		padding-bottom: 10px;
+    		margin-bottom: 10px;
+    	}
+    	.diqu+a{
+    		color: #000;
+    		border:1px solid #ddd;
+    	}
+    	#popover{
+			height: 60%;
+			width:30%;
+		}
+	 </style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">汽车秀</h1>
+	    <a class="mui-icon mui-icon-home mui-pull-right" id="backIndex"></a>
+	</header>
+	<div class="mui-content">
+		<div id="popover" class="mui-popover">
+			<div class="mui-scroll-wrapper">
+			    <div class="mui-scroll">
+				    <ul class="mui-table-view">
+				    	<li class="mui-table-view-cell"><a href="#">京</a></li>
+				    	<li class="mui-table-view-cell"><a href="#">粤</a></li>
+				    	<li class="mui-table-view-cell"><a href="#">沪</a></li>
+				    	<li class="mui-table-view-cell"><a href="#">京</a></li>
+				    	<li class="mui-table-view-cell"><a href="#">粤</a></li>
+				    </ul>
+				</div>
+			</div>
+		</div>
+
+		<form class="mui-input-group">
+		    <div class="mui-input-row">
+		        <label class="diqu">车牌：</label><a href="#popover" id="openPopover" class="mui-icon mui-icon-arrowdown mui-right">京</a>
+		        <input type="text" class="mui-input-clear" placeholder="请输入车牌号">
+		    </div>
+		    <div class="mui-input-row">
+		        <label>发动机号</label>
+		        <input type="text" class="mui-input-clear" placeholder="请输入发动机号">
+		    </div>
+		    <div class="mui-input-row">
+		        <label>查询城市：</label>
+		        <input type="text" class="mui-input-clear" placeholder="请输入查询城市">
+		    </div>
+		    <div class="mui-input-row">
+		        <label>备注名称</label>
+		        <input type="text" class="mui-input-clear" placeholder="请输入车架号">
+		    </div>
+		    <div class="submit">
+				<button type="button" class="mui-btn mui-btn-warning mui-btn-block">提交</button>
+			</div>
+		</form>
+		<div class="info">
+			<h4>违章信息</h4>
+			<hr />
+			<div class="info-centent">
+				<div>
+				<p>时间:</p><span>123</span>
+				</div>
+				<div>
+				<p>地址:</p><span>123</span>
+				</div>
+				<div>
+				<p>违章内容:</p><span>123</span>
+				</div>
+				<div>
+				<p>罚款：<span>10000</span>&nbsp;&nbsp;积分：<span>12</span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		mui('.mui-scroll-wrapper').scroll()
+		mui.plusReady(function(){
+			var btn = document.getElementById("backIndex");
+			//监听点击事件
+			btn.addEventListener("tap",function () { 
+				plus.webview.currentWebview().close();
+				plus.webview.getLaunchWebview().evalJS("changSub(1);");
+				plus.webview.getLaunchWebview().evalJS("document.getElementById('tabBar').getElementsByClassName('mui-active')[0].classList.remove('mui-active');document.getElementById('home').classList.add('mui-active');mui.plusReady(function(){changSub(1)});");
+				plus.webview.getLaunchWebview().show();
+				});
+				
+//			mui.trigger(document.getElementById("backIndex"),'tap',function(){
+//				console.log("1");   
+//			plus.webview.getLaunchWebview().show();
+//			
+//			});
+		})
+	</script>
+</body>
+</html>

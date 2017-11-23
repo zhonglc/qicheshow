@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link rel="stylesheet" href="css/icons-extra.css" />
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/index.css" />
+    <script type="text/javascript" src="js/h.min.js"></script>
+</head>
+	<body>
+		<div class="mui-content">
+			<div id="service" class="">
+				<div class="fuwu">
+					<div class="fuwu-title">
+						<span>全部服务</span>
+					</div>
+					<ul class="mui-table-view mui-grid-view mui-grid-9">
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 appoin">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-y-12.png" alt="" /></span>
+						        <div class="mui-media-body">预约保养</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4" id="rescue">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-y-11.png" alt="" /></span>
+						        <div class="mui-media-body">紧急救援</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 violation">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-y-10.png" alt="" /></span>
+						        <div class="mui-media-body">违章查询</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4" id="featured">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-y-9.png" alt="" /></span>
+						        <div class="mui-media-body">推荐购车</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 appoin">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-y-8.png" alt="" /></span>
+						        <div class="mui-media-body">预约维修</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4" id="dealers">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-y-7.png" alt="" /></span>
+						        <div class="mui-media-body">经销商查询</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4" id="anti_fake">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-s-17.png" alt="" /></span>
+						        <div class="mui-media-body">配件防伪</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 insurance">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-y-5.png" alt="" /></span>
+						        <div class="mui-media-body">保险服务</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4" id="traffic">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-y-4.png" alt="" /></span>
+						        <div class="mui-media-body">现行查询</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 insurance">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-y-3.png" alt="" /></span>
+						        <div class="mui-media-body">金融服务</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-y-2.png" alt="" /></span>
+						        <div class="mui-media-body">附近加油站</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 insurance">
+						    <a href="#">
+						        <span class="mui-icon grid-9"><img src="images/icon-png/icon-y-1.png" alt="" /></span>
+						        <div class="mui-media-body">购物计算</div>
+						    </a>
+						</li>
+					
+					</ul>
+					
+				</div>	
+			</div>
+		</div>
+		<script>
+		function onUrl(Pclass,sNode,url,id){
+			mui(Pclass).on('tap',sNode,function(){
+			//打开
+		mui.openWindow({
+			url:url,
+			id:id 
+		});
+	});
+		}
+		onUrl(".mui-table-view",".appoin","html/service_appoin1.html","service_appoin1");
+		onUrl(".mui-table-view","#rescue","html/service_rescue.html","service_rescue");
+		onUrl(".mui-table-view",".violation","html/service_violation.html","service_violation");
+		onUrl(".mui-table-view","#featured","html/my_featured.html","my_featured");
+		onUrl(".mui-table-view","#dealers","html/service-dealers.html","service-dealers");
+		onUrl(".mui-table-view","#anti_fake","html/anti-fake.html","anti_fake");
+		onUrl(".mui-table-view",".insurance","html/service_insurance.html","service_insurance");
+		onUrl(".mui-table-view","#traffic","html/service_traffic.html","service_traffic");
+			var _self, _prev, index,_next; 
+mui.plusReady(function(){
+    _self = plus.webview.currentWebview();
+    _prev = plus.webview.getWebviewById('searchCar.html');
+    _next = plus.webview.getWebviewById('user.html');
+    index = plus.webview.getLaunchWebview();
+    _self.drag(
+        {
+            direction : "right",
+            moveMode  :　"followFinger"
+        },
+        {
+            view　              :　_prev,
+            moveMode  : "follow"
+        },
+        function(event){
+            	if(plus.webview.currentWebview().getStyle().left!=="0%"){
+                index.evalJS("document.getElementById('tabBar').getElementsByClassName('mui-active')[0].classList.remove('mui-active');document.getElementById('searchCar').classList.add('mui-active');");
+            }
+        }
+    );
+     _self.drag(
+        {
+            direction : "left",
+            moveMode  :　"followFinger"
+        },
+        {
+            view　         :　_next,
+            moveMode  : "follow"
+        },
+        function(event){
+            	if(plus.webview.currentWebview().getStyle().left!=="0%"){
+                index.evalJS("document.getElementById('tabBar').getElementsByClassName('mui-active')[0].classList.remove('mui-active');document.getElementById('user').classList.add('mui-active');");
+            }
+            	}
+        
+    );
+});
+		</script>
+	</body>
+</html>

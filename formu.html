@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/index.css" />
+    <style>
+    	.login{
+    		width:100%;
+    		height:100%;
+    		padding:40% 40%;
+    	}
+    </style>
+</head>
+<body>
+	<div class="login">
+		加载中
+	</div>
+	<script type="text/javascript">
+var _self, _next, timer;
+	function main(){
+	mui.plusReady(function(){
+		if(!plus.webview.getWebviewById("main.html")){
+			if(plus.webview.currentWebview().getStyle().left==="0%"){
+			mui.init({
+    		subpages : [{
+				url:"formu_main.html",
+				id:"formu_main.html",
+				styles:{
+					top:"1px",
+					bottom:"0"  
+				}
+			}]
+		});
+	} }
+		});
+	}
+mui.plusReady(function(){
+    _self = plus.webview.currentWebview();
+    _prev = plus.webview.getWebviewById('home.html');
+    _next = plus.webview.getWebviewById('searchCar.html');
+    index = plus.webview.getLaunchWebview();
+    _self.drag(
+        {
+            direction : "right",
+            moveMode  :　"followFinger"
+        },
+        {
+            view　              :　_prev,
+            moveMode  : "follow"
+        },
+        function(e){
+            	if(plus.webview.currentWebview().getStyle().left!=="0%"){
+                index.evalJS("document.getElementById('tabBar').getElementsByClassName('mui-active')[0].classList.remove('mui-active');document.getElementById('home').classList.add('mui-active');");
+            	} 
+        }
+    );
+    _self.drag(
+        {
+            direction : "left",
+            moveMode  :　"followFinger"
+        },
+        {
+            view　              :　_next,
+            moveMode  : "follow"
+        },
+        function(event){
+            	if(plus.webview.currentWebview().getStyle().left!=="0%"){
+                index.evalJS("document.getElementById('tabBar').getElementsByClassName('mui-active')[0].classList.remove('mui-active');document.getElementById('searchCar').classList.add('mui-active');");
+            	}
+            
+        }
+    );
+});
+</script>
+</body>
+</html>

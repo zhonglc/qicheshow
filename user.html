@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link rel="stylesheet" href="css/icons-extra.css" />
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="js/zepto.js"></script>
+    <style>
+    	.user_top_div p a{ 
+    		color:#fff;
+    	}
+    	.user_top_div{
+    		margin:30px 0 30px -14px;
+    	}
+    </style>
+</head>
+<body>
+	
+		<div class="mui-content">
+		<div id="user" class="">
+				<div class="user-window">
+					<div class="operation">
+						<a class="settings mui-icon mui-icon-gear-filled" id="gear"></a>
+						<a class="feedback mui-icon mui-icon-chatbubble" id="news"></a>
+					</div>
+					<ul class="mui-table-view mui-grid-view">
+					    <li class="mui-table-view-cell mui-media mui-col-xs-12">
+					        <div class="user_top_div">
+					            <a id="userImg"><img class="mui-media-object user-top" src="img/my-photo1.jpg" id="lockImg"></a>
+					            <p class="mui-media-large" id="userName"><a id="login">【请登录】</a></p>
+					            <p class="mui-media-large"><a id="reg">【点击注册】</a></p>
+					        </div>
+					    </li>
+					</ul>
+				</div>
+				<ul class="mui-table-view mui-grid-view myMine">
+				    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+				        <a href="#">
+				            <img class="mui-media-object mine" src="images/icon-png/icon-ax-6.png">
+				            <div class="mui-media-body">
+				            	<span class="mine-font">我的消息</span>
+				            </div>
+				        </a>
+				    </li>
+				    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+				        <a href="#">
+				            <img class="mui-media-object mine" src="images/icon-png/icon-ax-7.png">
+				            <div class="mui-media-body">
+				            	<span class="mine-font">我的消息</span>
+				            </div>
+				        </a>
+				    </li>
+				    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+				        <a href="#">
+				            <img class="mui-media-object mine" src="images/icon-png/icon-ax-8.png">
+				            <div class="mui-media-body">
+				            	<span class="mine-font">我的消息</span>
+				            </div>
+				        </a>
+				    </li>
+				</ul>
+				<ul class="mui-table-view imgP">
+				        <li class="mui-table-view-cell">
+				            <a class="mui-navigate-right ">
+				                <img src="images/icon-png/icon-n-1.png" alt="" class="mui-media-object mui-pull-left small-icon"/>
+				                <p>我的钱包</p>
+				            </a>
+				        </li>
+				        <li class="mui-table-view-cell">
+				            <a class="mui-navigate-right">
+				            	<img src="images/icon-png/icon-n-2.png" alt="" class="mui-media-object mui-pull-left small-icon"/>
+				                 <p>申请认证</p>
+				            </a>
+				        </li>
+				        <li class="mui-table-view-cell">
+				            <a class="mui-navigate-right">
+				            	<img src="images/icon-png/icon-n-3.png" alt="" class="mui-media-object mui-pull-left small-icon"/>
+				                 <p>我的订单</p>
+				            </a>
+				        </li>
+				        <li class="mui-table-view-cell">
+				            <a class="mui-navigate-right">
+				            	<img src="images/icon-png/icon-n-4.png" alt="" class="mui-media-object mui-pull-left small-icon"/>
+				                 <p>每日任务</p>
+				            </a>
+				        </li>
+				        <li class="mui-table-view-cell" id="feedback">
+				            <a class="mui-navigate-right">
+				            	<img src="images/icon-png/icon-n-5.png" alt="" class="mui-media-object mui-pull-left small-icon"/>
+				                 <p>意见反馈</p>
+				            </a>
+				        </li>
+				        <li class="mui-table-view-cell">
+				            <a class="mui-navigate-right">
+				            	<img src="images/icon-png/icon-n-6.png" alt="" class="mui-media-object mui-pull-left small-icon"/>
+				                 <p>点击好评</p>
+				            </a>
+				        </li>
+				   </ul>
+				</div>
+		
+	</div>
+	</div>
+	<script src="js/mui.previewimage.js"></script>
+	<script>
+		document.getElementById("news").addEventListener("tap",function(){
+		  mui.confirm('您有1条新消息','新消息提醒',['忽略','查看'],function (e) {
+		  	console.log(e.index);
+		  },'div');
+		  })
+		document.getElementById("feedback").addEventListener("tap",function(){
+			mui.openWindow({
+						url:"html/feedback.html",
+						id:"feedback.html"
+				});
+		});
+		var page=null;  
+            page={  
+                imgUp:function(){  
+                    var m=this;  
+                    plus.nativeUI.actionSheet({cancel:"取消",buttons:[  
+                        {title:"拍照"},  
+                        {title:"从相册中选择"}  
+                    ]}, function(e){//1 是拍照  2 从相册中选择  
+                        switch(e.index){  
+                            case 1:appendByCamera();break;  
+                            case 2:appendByGallery();break;  
+                        }  
+                    });  
+                }  
+                //摄像头  
+            }  
+              
+            // 拍照添加文件
+            function appendByCamera(){
+                plus.camera.getCamera().captureImage(function(e){
+                    console.log(e);
+                    plus.io.resolveLocalFileSystemURL(e, function(entry) { 
+                    var path = entry.toLocalURL(); 
+                    document.getElementById("lockImg").src = path; 
+                     console.log(path);
+                    }, function(e) { 
+                        mui.toast("读取拍照文件错误：" + e.message); 
+                    }); 
+    
+                });    
+            }
+            // 从相册添加文件
+            function appendByGallery(){
+            	console.log("开始选取照片");
+                 plus.gallery.pick(function(path){
+                	console.log(path);
+                    document.getElementById("lockImg").src = path;
+                },function(){
+                	console.log("没有相应的权限");
+                	imgE0rr();
+                }
+                );
+            }
+            //服务端接口路径
+            var server = "";
+            //获取图片元素
+            var files = document.getElementById('headimg');
+            // 上传文件
+            function upload(){
+                console.log(files.src);
+                var wt=plus.nativeUI.showWaiting();
+                var task=plus.uploader.createUpload(server,
+                    {method:"POST"},
+                    function(t,status){ //上传完成
+                        if(status==200){
+                            alert("上传成功："+t.responseText);
+                            wt.close(); //关闭等待提示按钮
+                        }else{
+                            alert("上传失败："+status);
+                            wt.close();//关闭等待提示按钮
+                        }
+                    }
+                );
+                //添加其他参数
+                task.addData("name","test");
+                task.addFile(files.src,{key:"dddd"});
+                task.start();
+            }     
+               
+               
+     //发送照片   
+       
+//  function clickGallery() {   
+//      plus.gallery.pick(function(path) {   
+//          plus.zip.compressImage({   
+//              src: path,   
+//              dst: "_doc/chat/gallery/" + path,   
+//              quality: 20,   
+//              overwrite: true   
+//          }, function(e) {   
+//              var task = plus.uploader.createUpload("服务器" + "upload/chat", {   
+//                  method: "post"   
+//              }, function(t, sta) {   
+//                  console.log(JSON.stringify(t))   
+//                  if(sta == 200) {   
+//                      var msg = t.responseText;   
+//                      var oImg = JSON.parse(msg);   
+//                      var imgUrl = oImg.urls;   
+//                      var re = new RegExp("\\\\", "g");   
+//                      imgUrl = imgUrl.replace(re, "/");   
+//                      uploadMsg(2, imgUrl);   
+//                  }   
+//              });   
+//              task.addFile(e.target, {});   
+//              task.start();   
+//          }, function(err) {   
+//              console.error("压缩失败：" + err.message);   
+//          });   
+// 
+//      }, function(err) {});   
+//  };   
+//     
+//     
+//  // 拍照   
+//     
+//  function clickCamera() {   
+//      var cmr = plus.camera.getCamera();   
+//      var res = cmr.supportedImageResolutions[0];   
+//      var fmt = cmr.supportedImageFormats[0];   
+//      cmr.captureImage(function(path) {   
+//          //plus.io.resolveLocalFileSystemURL(path, function(entry) {   
+//          plus.io.resolveLocalFileSystemURL(path, function(entry) {   
+//              var localUrl = entry.toLocalURL();   
+//              
+//              	plus.zip.compressImage({   
+//                  src: localUrl,   
+//                  dst: "_doc/chat/camera/" + localUrl,   
+//                  quality: 20,   
+//                  overwrite: true   
+//              }, function(e) {   
+//                  var task = plus.uploader.createUpload(127.0.0.1 + "upload/chat", {   
+//                      method: "post"   
+//                  }, function(t, sta) {   
+//                      if(sta == 200) {   
+//                          var msg = t.responseText;   
+//                          var oImg = JSON.parse(msg);   
+//                          var imgUrl = oImg.urls;   
+//                          var re = new RegExp("\\\\", "g");   
+//                          imgUrl = imgUrl.replace(re, "/");   
+//                          console.log(imgUrl);   
+//                          uploadMsg(2, imgUrl);   
+//                      }   
+//                  });   
+//                  task.addFile(e.target, {});   
+//                  task.start();   
+//              }, function(err) {   
+//                  console.log("压缩失败：  " + err.message);   
+//              });   
+//          });   
+//      }, function(err) {   
+//          console.error("拍照失败：" + err.message);   
+//      }, {   
+//          index: 1   
+//      });   
+//  };     
+            
+		
+	function login(){
+		//如果已经登录
+			if(localStorage.getItem('$state')){
+				document.getElementById("lockImg").src = "img/my-photo1.jpg"; 
+				document.getElementById("userName").innerHTML=JSON.parse(localStorage.getItem('$state')).account
+				mui.plusReady(function(){
+					mui("#userImg").off("tap","#userImg");
+					mui(".user_top_div").on("tap",'#userImg',function(){
+                // 弹出系统选择按钮框
+                    page.imgUp();    
+					});
+				});
+			}else{
+				document.getElementById("lockImg").src = "img/my-photo1.jpg";  
+				document.getElementById("userName").innerHTML='<a id="login">【请登录】</a>';
+				document.getElementById("login").addEventListener("tap",function(){
+					mui.openWindow({
+						url:"html/login.html",
+						id:"login.html"
+				});
+				});
+			}
+			}
+	
+		var _self, _prev, index;
+mui.plusReady(function(){
+	document.getElementById("login").addEventListener("tap",function(){
+		mui.openWindow({
+			url:"html/login.html",
+			id:"login.html"
+		});
+	});
+	document.getElementById("reg").addEventListener("tap",function(){
+		mui.openWindow({
+			url:"html/reg.html",
+			id:"reg.html"
+		});
+	});
+	document.getElementById("gear").addEventListener('tap',function(){
+		mui.openWindow({
+			url:"html/gear.html",
+			id:"gear.html"
+		}
+		);
+	
+});
+    _self = plus.webview.currentWebview();
+    _prev = plus.webview.getWebviewById('service.html');
+    index = plus.webview.getLaunchWebview();
+    _self.drag(
+        {
+            direction : "right",
+            moveMode  :　"followFinger"
+        },
+        {
+            view　              :　_prev,
+            moveMode  : "follow"
+        },
+        function(event){
+            	if(plus.webview.currentWebview().getStyle().left!=="0%"){
+                index.evalJS("document.getElementById('tabBar').getElementsByClassName('mui-active')[0].classList.remove('mui-active');document.getElementById('service').classList.add('mui-active');");
+            }
+        }
+    );
+    });
+		</script>
+	</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="js/h.js"></script>
+</head>
+<body> 
+	<div class="mui-content">
+			<div id="home" class="">
+				<div class="banner">
+					<img src="img/banner-car.jpg" alt="" />
+					<h1>雪佛兰2017</h1>
+				</div>
+				<div class="table-view">
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 violation">
+							<a href="#">
+								<img class="mui-media-icon aximg" src="images/icon-png/icon-ax-1.png" alt="" />
+							</a>	
+								<div class="mui-media-body">违章查询</div>
+								<span class="mui-media-large">6次</span>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4">
+							<a href="#">
+								<img class="mui-media-icon aximg" src="images/icon-png/icon-ax-2.png" alt="" />
+							</a>	
+								<div class="mui-media-body">违章查询</div>
+								<span class="mui-media-large">6次</span>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4">
+							<a href="#">
+								<img class="mui-media-large aximg" src="images/icon-png/icon-ax-3.png" alt="" />
+							</a>	
+								<div class="mui-media-body">违章查询</div>
+								<span class="mui-media-large">6次</span>
+						</li>
+					</ul>
+				</div>
+				<div class="HOT">
+					<div>
+						<div class="mui-table-view">
+							<div class="mui-table-view-cell mui-media" id="new-list">
+								<a href="#">
+									<img src="images/icon-hot.jpg" alt="" class="mui-media-icon mui-pull-left hot-img"/>
+									<div class="mui-media-body">
+										<h4>首付</h6>
+										<p>雪佛兰</p>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class=" mui-row">
+							<ul  class="mui-table-view mui-col-xs-6">
+								<li class="mui-table-view-cell mui-media">
+									<a href="#">
+										<img src="images/icon-png/icon-ax-4.png" alt="" class="mui-media-icon mui-pull-right hot2img"/>
+										<div class="mui-media-body">
+											<p class="mui-badge mui-badge-danger">车主抵押贷款</p>
+											<p>给钱开车</p>
+										</div>
+									</a>
+								</li>
+								</ul>
+								<ul   class="mui-table-view mui-col-xs-6">
+								<li class="mui-table-view-cell mui-media">
+									<a href="#">
+										 <img src="images/icon-png/icon-ax-5.png" alt="" class="mui-media-icon mui-pull-right hot2img"/>
+										<div class="mui-media-body">
+											<p class="mui-badge mui-badge-danger">车主抵押贷款</p>
+											<p>给钱开车</p>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+		
+		<script>
+			function onUrl(Pclass,sNode,url,id){
+			mui(Pclass).on('tap',sNode,function(){
+			//打开新闻详情 
+		mui.openWindow({
+			url:url,
+			id:id 
+		});
+	});
+		}
+		onUrl(".mui-table-view",'#new-list','html/new-list.html','new-list');
+		
+var _self, _next, timer;
+mui.plusReady(function(){
+                
+    _self = plus.webview.currentWebview();
+    _next = plus.webview.getWebviewById('formu.html');
+    index = plus.webview.getLaunchWebview();
+    _self.drag(
+        {
+            direction : "left",
+            moveMode  :　"followFinger"
+        },
+        {
+            view　              :　_next,
+            moveMode  : "follow"
+        },
+        function(event){ 
+//          	mui(".mui-bar").on("tap","#home",function(){changSub(1);});
+               if(plus.webview.currentWebview().getStyle().left==="-100%"){
+                index.evalJS("document.getElementById('tabBar').getElementsByClassName('mui-active')[0].classList.remove('mui-active');document.getElementById('formu').classList.add('mui-active');");
+            	_next.evalJS("main();");
+               }
+            
+        }
+    );
+});
+
+		</script>
+</body>
+</html>
